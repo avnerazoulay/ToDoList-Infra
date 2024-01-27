@@ -7,14 +7,12 @@ releases:
     namespace: todo-list
     chart: bitnami/postgresql
     version: 13.4.2 # Latest
-    values:
-      - Secrets/postgres-secrets.yaml.enc
-    installed: false
+    installed: true
 
   - name: Backend
     chart: ./Backend
-    installed: false
+    installed: true
 
   - name: Frontend
     chart: ./Frontend
-    installed: false
+    installed: true
