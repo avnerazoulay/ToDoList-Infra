@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.appName }}
+  namespace: {{ .Values.namespace }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Values.appName }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.appName }}
+    spec:
+      containers:
+      - name: {{ .Values.appName }}
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullPolicy: "{{ .Values.image.pullPolicy }}"
+        ports:
+        - containerPort: {{ .Values.containerPort }}
+        env:
+        - name: REACT_APP_BACKEND_API_BASE_URL
+          valueFrom:
+            secretKeyRef:
+              name: REACT_APP_BACKEND_API_BASE_URL_SECRET
+              key: REACT_APP_BACKEND_API_BASE_URL

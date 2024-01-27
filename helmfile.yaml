@@ -1,0 +1,20 @@
+repositories:
+  - name: bitnami
+    url: https://charts.bitnami.com/bitnami
+
+releases:
+  - name: todo-list-pg
+    namespace: todo-list
+    chart: bitnami/postgresql
+    version: 13.4.2 # Latest
+    values:
+      - Secrets/postgres-secrets.yaml.enc
+    installed: false
+
+  - name: Backend
+    chart: ./Backend
+    installed: false
+
+  - name: Frontend
+    chart: ./Frontend
+    installed: false
