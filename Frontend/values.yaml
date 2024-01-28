@@ -1,6 +1,6 @@
 # General k8s app config
-appName: Frontend
-servingAppName: Backend # Security related config
+appName: frontend
+servingAppName: backend # Security related config
 namespace: todo-list
 storageSize: 1Gi
 containerPort: 3000

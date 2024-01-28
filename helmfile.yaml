@@ -7,12 +7,14 @@ releases:
     namespace: todo-list
     chart: bitnami/postgresql
     version: 13.4.2 # Latest
-    installed: true
+    installed: false
 
-  - name: Backend
+  - name: backend
+    namespace: todo-list
     chart: ./Backend
-    installed: true
+    installed: false
 
-  - name: Frontend
+  - name: frontend
+    namespace: todo-list
     chart: ./Frontend
-    installed: true
+    installed: false

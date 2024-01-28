@@ -23,5 +23,5 @@ spec:
         - name: REACT_APP_BACKEND_API_BASE_URL
           valueFrom:
             secretKeyRef:
-              name: REACT_APP_BACKEND_API_BASE_URL_SECRET
+              name: react-app-backend-api-base-url-secret
               key: REACT_APP_BACKEND_API_BASE_URL
