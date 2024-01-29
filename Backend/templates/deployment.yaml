@@ -21,4 +21,7 @@ spec:
         - containerPort: {{ .Values.containerPort }}
         env:
         - name: DATABASE_URL
-          value: "postgresql://postgres:postgres@10.108.131.89:5432/todo-list-db"
+          valueFrom:
+            secretKeyRef:
+              name: database-url-secret
+              key: DATABASE_URL
