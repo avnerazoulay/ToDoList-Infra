@@ -3,6 +3,8 @@ kind: Ingress
 metadata:
   name: {{ .Values.appName }}-ingress  
   namespace: {{ .Values.namespace }}
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
   - host: {{ .Values.hostAddr }}
@@ -14,4 +16,4 @@ spec:
           service:
             name: {{ .Values.appName }}
             port:
-              number: {{ .Values.containerPort }}
+              number: 80

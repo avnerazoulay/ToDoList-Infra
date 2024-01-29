@@ -2,7 +2,7 @@
 appName: frontend
 servingAppName: backend # Security related config
 namespace: todo-list
-storageSize: 1Gi
+storageSize: 8Gi
 containerPort: 3000
 
 # Replicas Config

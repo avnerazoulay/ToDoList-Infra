@@ -1,20 +1,20 @@
-repositories:
-  - name: bitnami
-    url: https://charts.bitnami.com/bitnami
-
 releases:
-  - name: todo-list-pg
+  - name: nginx-ingress
     namespace: todo-list
-    chart: bitnami/postgresql
-    version: 13.4.2 # Latest
-    installed: false
+    chart: ./nginx-ingress
+    installed: true
+
+  - name: postgresql
+    namespace: todo-list
+    chart: ./postgresql
+    installed: true
 
   - name: backend
     namespace: todo-list
     chart: ./Backend
-    installed: false
+    installed: true
 
   - name: frontend
     namespace: todo-list
     chart: ./Frontend
-    installed: false
+    installed: true

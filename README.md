@@ -7,6 +7,10 @@ Kubernetes based Infra for a Todo list service consist of 3 Helm charts:
 Implemented in an effective way using Helmfile plugin to deploy on a single command.
 Every chart consist a strict network polices objects to allow applications to communicate correctly as needed.
 
+## Documentation  
+### postgresql 
+For more flexibility to match our requirements I have fetched bitnami/postgresql
+
 ## Tools
 - Docker Desktop v4.26.1
 - kubectl v1.28.1
